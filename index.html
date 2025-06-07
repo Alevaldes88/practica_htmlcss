@@ -1,11 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rovers-Inicio</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
-    <h1>HOLA MUNDO!</h1>
+    <div class="wrapper">
+        <header>
+            <!-- Barra Superior -->
+            <div class="topbar">
+                <div class="container">
+                    <a href="mailto:rovers@gmail.com" aria-label="Correo">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>rovers@gmail.com</span>
+                    </a>
+
+                    <a href="tel:+34915556677" aria-label="Teléfono">
+                        <i class="fa-solid fa-phone-flip"></i>
+                        <span>91 555 66 77</span>
+                    </a>
+
+                    <a href="#" onclick="return false" aria-label="Carrito de compra">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>Carrito Compra</span>
+                    </a>
+
+                    <a href="#" onclick="return false" aria-label="Usuario">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <span>Usuario</span>
+                    </a>
+                </div>
+            </div>
+            <nav class="container">
+                <figure>
+                    <a href="#" onclick="return false">
+                        <img src="./images/logo.jpg" alt="Logo Rovers Hamburguesa">
+                    </a>
+                </figure>
+                <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <ul class="menu">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Menú</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Equipo</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="hero">
+                <div class="container">
+                    <h1>Las mejores hamburguesas del mundo</h1>
+
+                    <h4>Bienvenido a nuestra hamburguesería</h4>
+                    <p>Come a partir de 15€</p>
+                    <a href="#" class="button" aria-label="Ir a nuestra carta" onclick="return false">Nuestra Carta <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                    <div class="redes">
+                        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+
+                        <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <section id="services">
+                <h2>Our <span>Services</span></h2>
+                <div class="container">
+
+                    <article>
+                        <i class="fa-solid fa-heart"></i>
+                        <h3>1. Carne 100% natural</h3>
+                        <p>Utilizamos carne de res 100% natural, sin aditivos ni conservantes, seleccionada
+                            con sumo cuidado para garantizar la máxima frescura y sabor en
+                            cada...
+                        </p>
+                        <a href="#" aria-label="Leer más sobre carne 100% natural" onclick="return false">Leer más <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </article>
+
+                    <article>
+                        <i class="fa-solid fa-gear"></i>
+                        <h3>2. Cocina Moderna</h3>
+                        <p>Contamos con una cocina moderna y equipada con tecnología de última generación, lo que nos
+                            permite preparar cada plato con altos estandares...</p>
+                        <a href="#" aria-label="Leer más sobre nuestra cocina moderna" onclick="return false">Leer más
+                            <i class="fa-solid fa-arrow-right"></i></a>
+                    </article>
+
+                    <article>
+                        <i class="fa-solid fa-truck"></i>
+                        <h3>3. Servicio Impecable</h3>
+                        <p>Nuestro equipo se esfuerza por brindarte una atención rápida, amable y personalizada,
+                            asegurando que cada visita sea una experiencia agradable y satisfactoria...</p>
+                        <a href="#" aria-label="Leer más acerca de nuestro equipo de trabajo"
+                            onclick="return false">Leer más <i class="fa-solid fa-arrow-right"></i></a>
+                    </article>
+                </div>
+            </section>
+            <section id="about">
+                <h2>About <span>Us</span></h2>
+                <div class="container">
+                    <div class="figure">
+                        <figure>
+                            <img src="./images/about-main.jpg" alt="El Chef">
+                        </figure>
+                    </div>
+                    <div class="texto">
+                        <h4>The History <span>Our Restautant</span></h4>
+                        <p>Desde nuestros inicios, nos hemos comprometido a ofrecer hamburguesas de la más alta calidad,
+                            utilizando ingredientes frescos y naturales. Nuestro chef, con más de...</p>
+                        <a href="#" class="button" aria-label="Leer más sobre nuestra histora"
+                            onclick="return false">Leer
+                            más <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Button-Home. Conduce al inicio de la página-->
+        <a href="#top" class="button-home">
+            <svg fill="#fa573a" width="64px" height="64px" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg"
+                stroke="#fa573a">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                    <path
+                        d="M 13.7851 49.5742 L 42.2382 49.5742 C 47.1366 49.5742 49.5743 47.1367 49.5743 42.3086 L 49.5743 13.6914 C 49.5743 8.8633 47.1366 6.4258 42.2382 6.4258 L 13.7851 6.4258 C 8.9101 6.4258 6.4257 8.8398 6.4257 13.6914 L 6.4257 42.3086 C 6.4257 47.1602 8.9101 49.5742 13.7851 49.5742 Z M 36.6366 34.9961 L 20.5351 34.9961 C 19.4101 34.9961 18.9179 33.7071 19.5507 32.6758 L 27.3554 19.5274 C 27.8944 18.5664 29.2773 18.5196 29.8398 19.5274 L 37.6210 32.6758 C 38.2539 33.7774 37.7382 34.9961 36.6366 34.9961 Z">
+                    </path>
+                </g>
+            </svg>
+        </a>
+
+        <footer>
+            <p class="container">
+                Copyright© 2025 -
+                <a href="/aviso-legal" onclick="return false">Aviso Legal</a>
+                <span>-</span>
+                <a href="/cookies" onclick="return false">Cookies</a>
+            </p>
+        </footer>
+    </div>
 </body>
+
 </html>

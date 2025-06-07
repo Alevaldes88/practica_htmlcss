@@ -1,0 +1,502 @@
+/* Importar mi reset general, iconos de Font Awesome, y los estilos Montserrat 400, 700 y Handle de Google Font*/
+
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Montserrat:wght@400;700&display=swap');
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css);
+
+
+/* Estilos generales*/
+
+/* Definimos las variables de nuestro CSS */
+:root {
+    --fuente-principal: "Montserrat", sans-serif;
+    --fuente-secundaria: "Handlee", cursive;
+    --color-principal: #fa573a;
+    --color-secundario: #21242e;
+    --color-gris-claro: #bfbfbf;
+    --color-gris-oscuro: #505050;
+    --font-size: 1rem;
+}
+
+/* Definimos el ancho máximo del contenedor que encorseta y lo centramos */
+.container {
+    max-width: 62.75rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+body {
+    font-size: var(--font-size);
+    font-family: var(--fuente-principal);
+    color: var(--color-gris-claro);
+}
+
+/* Diseño Movile First */
+
+/* Inicio del Header */
+
+
+header .topbar {
+    background-color: var(--color-secundario);
+
+    .container {
+        /* Para poder controlar la forma en que se organizan los enementos internos(a)*/
+        display: flex;
+        /* Crea espacio antes, entre y después de los elementos. La distancia entre elemntos el doble que la exitente entre los emementos de los extremos y el borde del container */
+        justify-content: space-around;
+
+
+        a {
+            color: var(--color-gris-claro);
+            /*Se hace el contenedor padre (a) flex para controlar la alineación vertical de sus hijos (i, Span) */
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+
+            i {
+                color: var(--color-principal);
+                font-size: 1.8rem;
+                padding: 1.25rem 0;
+            }
+
+            span {
+                font-size: 0.875rem;
+                /* Se esconde en móviles */
+                display: none;
+            }
+        }
+    }
+}
+
+
+
+header .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .hamburger {
+        cursor: pointer;
+
+        /* Se le da forma al menú hamburguesa */
+        div {
+            height: 0.1875rem;
+            width: 2.5rem;
+            margin: 0.75rem 0rem;
+            background-color: var(--color-gris-claro);
+        }
+    }
+
+    figure {
+        width: 9.375rem;
+    }
+
+    .menu {
+        /* Permite que el logo y la hamburguesas permanezca solos en la primera fila*/
+        width: 100%;
+        text-align: center;
+        padding-top: 1.5625rem;
+
+        li {
+            border-bottom: 0.125rem solid var(--color-gris-claro);
+
+            a {
+                color: var(--color-gris-claro);
+                text-decoration: none;
+                /*Para que el margin funcione correctamente*/
+                display: inline-block;
+                margin: 1.25rem 0;
+                font-size: 1.125rem;
+            }
+
+            /* Especifica el color de la letra en el primer li que será distinta */
+            &:first-child a {
+                color: var(--color-principal);
+            }
+
+            /* Especifica que el último li no tendrá borde inferior */
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+
+    }
+}
+
+/* Fin del Header */
+
+
+/* Inicio del Main */
+
+/* Inicio del Hero */
+/* Estilo de los dos botones iguales en el Main */
+.button {
+    /* Permite tratarlo como contenedor y que ocupe solo el ancho necesario*/
+    display: inline-block;
+    background-color: var(--color-principal);
+    text-decoration: none;
+    color: white;
+    padding: 1.3rem;
+    margin-bottom: 1.25rem;
+    font-size: 1.3rem;
+}
+
+main .hero {
+    display: flex;
+    align-items: center;
+    /* Garantiza que el hero llegue hasata el final de la pantalla en Desktop*/
+    min-height: calc(100vh - 13.925rem);
+    background-image: url(../images/fondo.jpg);
+    /* Se centra la imagen y se hace ocupar todo el contenedor*/
+    background-size: cover;
+    background-position: center center;
+    /* Oscurece la imagen */
+    background-color: #666666;
+    background-blend-mode: multiply;
+
+    .container {
+
+        color: white;
+        width: 100%;
+
+        h1 {
+            font-family: var(--fuente-secundaria);
+            font-size: 3rem;
+            margin: 1.25rem 0;
+        }
+
+        h4,
+        p {
+            font-size: 1.5rem;
+            margin: 1.25rem 0;
+        }
+
+        /*Hace alusión al primer párrafo*/
+        > :nth-child(2) {
+            color: var(--color-principal);
+        }
+    }
+
+    .redes {
+        display: flex;
+        gap: 3rem;
+
+        a {
+            font-size: 2.5rem;
+            color: white;
+
+        }
+    }
+
+}
+
+/* Fin del Hero */
+/* Inicio de las Secciones */
+/* Ataco dese aquí el estilo de los h2 porque se repiten en ambasa secciones */
+h2 {
+    text-align: center;
+    font-family: var(--fuente-secundaria);
+    color: var(--color-secundario);
+    font-size: 2.5rem;
+    /* Para posicionar el pseudo-elemnto de forma absoluta respecto al padre*/
+    position: relative;
+    margin: 1rem 0;
+    font-weight: 700;
+
+    span {
+        color: var(--color-principal);
+    }
+}
+
+/*Pseudo-elemento after (una línea)*/
+h2::after {
+    content: '';
+    /*Con display block aplico tamaños para dibujar la línea y garantizo que la línea pase debajo*/
+    display: block;
+    width: 7rem;
+    height: 0.2rem;
+    background: var(--color-principal);
+    margin: 0.5rem auto 0 auto;
+}
+
+/*Pseudo-elemnto before (X), al hacerlo absolute lo pongo en una capa superior y lo puedo centrar respecto a la raya*/
+h2::before {
+    content: '×';
+    position: absolute;
+    /*Desde la parte superior del elemento padre, baja hasta el 100% de la altura del padre.  Posiciona el elemento justo debajo del contenedor padre y de respectivo affer*/
+    top: 100%;
+    left: 50%;
+    /* Ya tengo la esquina superior izquierda del before en el centro inferior del after, solo falta centrarl0*/
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: var(--color-principal);
+}
+
+/* Inicio de la Sección de Products */
+#services {
+    .container {
+
+        article {
+            border-bottom: 0.125rem solid var(--color-gris-claro);
+            padding: 2rem 0;
+            font-size: 1.4rem;
+            margin: 1rem 0;
+
+            >i {
+                color: var(--color-principal);
+                border: var(--color-principal) 0.1rem solid;
+                padding: 0.8rem;
+                margin: 1rem 0;
+            }
+
+            h3 {
+                font-weight: 700;
+                color: var(--color-secundario);
+                padding: 1rem 0;
+            }
+
+            p {
+                color: var(--color-gris-oscuro);
+                line-height: 1.5rem;
+            }
+
+            a {
+                text-decoration: none;
+                color: var(--color-principal);
+                font-weight: 700;
+                /*Inline-bloc me permite darle padding*/
+                display: inline-block;
+                padding-top: 1rem;
+
+            }
+        }
+
+    }
+}
+
+/* Fin de la Sección de Procucts */
+
+/* Inicio de la Sección de About */
+#about {
+    /* Para despegarlo del fondo una distancia que permita ser observado su contenido sin que lo tape el footer o el button-home con position fixed*/
+    margin-bottom: 6rem;
+
+    .container {
+        font-size: 1.4rem;
+        text-align: left;
+
+        figure {
+            position: relative;
+        }
+
+        /*Se crea el marco como un pseudo-elemnto que ocupa toda la extención del figure, y se le suma un borde de 0.25rem*/
+        figure::before {
+            content: "";
+            position: absolute;
+            /* Para poder centrar; debido al agrandamiento que genera el incorporar el borde en el pseudo-elemento. Los pseudo-elementos no son atacados con la propiedad box-sizing: border-box en mi reset general y en este caso resulta conveniente */
+            top: -0.25rem;
+            left: -0.25rem;
+            width: 100%;
+            height: 100%;
+            border: 0.25rem solid var(--color-principal);
+            /* Rotación por defecto*/
+            transform: rotate(10deg);
+            /* Garantiza que el borde quede por detrás de la imagen*/
+            z-index: -1;
+        }
+
+        .texto {
+
+            h4 {
+                color: var(--color-secundario);
+                margin: 1.25rem 0;
+                font-weight: 700;
+                padding-top: 2rem;
+
+                span {
+                    display: block;
+                    color: var(--color-principal);
+                    font-weight: 400;
+                    margin-top: 1rem;
+                }
+            }
+
+            p {
+                line-height: 1.5rem;
+                color: var(--color-gris-oscuro);
+                margin: 1.25rem 0;
+            }
+        }
+    }
+}
+
+/* Fin de la Sección de About */
+/* Fin del Main*/
+
+/* Button-Home */
+a.button-home {
+    /* Se fija a una altura de 4rem desde el fonfo de la pagiga*/
+    position: fixed;
+    bottom: 3.5rem;
+    right: 1.5rem;
+    /*Garantiza estar en una capa superir a culquier elmento de la páqguina para nque nada lo tape en el scroll*/
+    z-index: 1000;
+}
+
+/* Inicio del Footer */
+footer {
+    color: white;
+    z-index: 1000;
+    font-size: 0.875rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--color-secundario);
+    margin: 0;
+
+    p.container {
+        padding: 1rem 1.5rem;
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
+
+/* Fin del Footer */
+
+
+/* Inicio Media Queries */
+
+@media (width > 37.5rem) {
+
+    /* Header */
+
+    header .container {
+
+        /* Permite ocultar la hamburguesa*/
+        .hamburger {
+            display: none;
+        }
+
+        .menu {
+            /*El menú ocupa todo lo que resta de container reservando solo el espacio justo necesario para el logo*/
+            width: calc(100% - 9.375rem);
+            display: flex;
+            justify-content: end;
+            padding: 0;
+
+            li {
+                border: none;
+                margin-left: 2.5rem;
+
+                a:hover {
+                    color: var(--color-principal);
+                }
+            }
+        }
+    }
+
+    /* Button */
+    .button:hover {
+        background-color: transparent;
+        color: var(--color-principal);
+        border: 2px solid var(--color-principal);
+    }
+
+    /* Services */
+    #services {
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+
+            /* Hacer dos columnas */
+            article {
+                width: 50%;
+                border-left: 0.125rem solid var(--color-gris-claro);
+                border-bottom: none;
+                padding: 1rem;
+                position: relative;
+
+                p {
+                    margin-bottom: 1.25rem;
+                }
+
+                a {
+                    /* Permite que el enlace (Leer más) permanezca siempre al fondo del article independientemente de lo que ocupe el párrafo, mucho más estético si existen párrafos de diferentes tamaños en los distintos articles*/
+                    position: absolute;
+                    bottom: 0;
+                }
+            }
+        }
+    }
+
+    /* About */
+    #about {
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            /* Centra el contenido de los div respecto a la vertical*/
+            align-items: center;
+            gap: 4rem;
+
+            /* Cada div ocupa la mitad del container respetando el gap entre ellos*/
+            div {
+                width: calc(50% - 2rem);
+            }
+
+            .texto {
+                h4 {
+                    margin: 0;
+                    padding: 0;
+                }
+
+            }
+
+            figure::before {
+                transition: transform 0.5s ease;
+            }
+
+            /* Al hacer hover sobre el figure se rotará el marco a 0°*/
+            figure:hover::before {
+                transform: rotate(0deg);
+            }
+        }
+    }
+
+    /* Footer */
+    footer p.container a:hover {
+        color: var(--color-principal);
+    }
+}
+
+@media (width > 48rem) {
+    header .topbar {
+        .container {
+            /*No deja espacio en los extremos*/
+            justify-content: space-between;
+
+            a {
+                span {
+                    /* Los hace vivsible*/
+                    display: inline-block;
+                }
+            }
+        }
+    }
+
+    /* En la sección Services ahora se tiene tres columnas */
+    #services {
+        .container {
+
+            article {
+                width: 33.3333%;
+            }
+        }
+    }
+
+}
